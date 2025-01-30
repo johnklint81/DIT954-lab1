@@ -17,7 +17,7 @@ public abstract class Car implements Movable {
     // protected final static double timestep = 0.1;
 
     // Constructor, maybe we should have more fields in this one?
-    // I don't like that the subclasses initialises nrDoors, enginePower, etc,
+    // I don't like that the subclasses initialises nrDoors, enginePower, etc.,
     // to hard-coded values.
     protected Car(int nrDoors, double enginePower, Color color, String modelName) {
         this.nrDoors = nrDoors;
@@ -42,11 +42,11 @@ public abstract class Car implements Movable {
     // We could use radians below if we wanted to
     @Override
     public void turnLeft(double angle) {
-        currentDirection = (currentDirection + angle) % 360;
+        currentDirection = (currentDirection + angle) % (2 * Math.PI);
     }
     @Override
     public void turnRight(double angle) {
-        currentDirection = (currentDirection - angle) % 360;
+        currentDirection = (currentDirection - angle) % (2 * Math.PI);
     }
     public int getNrDoors() {
         return nrDoors;
