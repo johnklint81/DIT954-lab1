@@ -105,14 +105,14 @@ public abstract class Car implements Movable {
 
     public void gas(double amount) {
         if (amount < 0 || amount > 1) {
-            throw new IllegalArgumentException("gas amount must be in interval [0, 1].");
+            throw new IllegalArgumentException("gas amount must be in interval (0, 1).");
         }
         incrementSpeed(amount);
     }
 
     public void brake(double amount) {
         if (amount < 0 || amount > 1) {
-            throw new IllegalArgumentException("brake amount must be in interval [0, 1].");
+            throw new IllegalArgumentException("brake amount must be in interval (0, 1).");
         }
         decrementSpeed(amount);
     }

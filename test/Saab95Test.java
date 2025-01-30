@@ -39,7 +39,7 @@ class Saab95Test {
         double currentSpeed = saab95.getCurrentSpeed();
         saab95.gas(amount);
         double newSpeed = saab95.getCurrentSpeed();
-        assertTrue(currentSpeed <= newSpeed);
+        assertTrue(currentSpeed < newSpeed);
         assertThrows(IllegalArgumentException.class, () -> saab95.gas(1.5));
         assertThrows(IllegalArgumentException.class, () -> saab95.gas(-1.5));
     }
@@ -51,7 +51,7 @@ class Saab95Test {
         double currentSpeed = saab95.getCurrentSpeed();
         saab95.brake(amount);
         double newSpeed = saab95.getCurrentSpeed();
-        assertTrue(currentSpeed >= newSpeed);
+        assertTrue(currentSpeed > newSpeed);
 
         assertThrows(IllegalArgumentException.class, () -> saab95.brake(1.5));
         assertThrows(IllegalArgumentException.class, () -> saab95.brake(-1.5));

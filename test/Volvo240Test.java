@@ -20,7 +20,7 @@ class Volvo240Test {
         double currentSpeed = volvo240.getCurrentSpeed();
         volvo240.gas(amount);
         double newSpeed = volvo240.getCurrentSpeed();
-        assertTrue(currentSpeed <= newSpeed);
+        assertTrue(currentSpeed < newSpeed);
         assertThrows(IllegalArgumentException.class, () -> volvo240.gas(1.5));
         assertThrows(IllegalArgumentException.class, () -> volvo240.gas(-1.5));
     }
@@ -33,7 +33,7 @@ class Volvo240Test {
         volvo240.brake(amount);
         double newSpeed = volvo240.getCurrentSpeed();
 
-        assertTrue(currentSpeed >= newSpeed);
+        assertTrue(currentSpeed > newSpeed);
 
         assertThrows(IllegalArgumentException.class, () -> volvo240.brake(1.5));
         assertThrows(IllegalArgumentException.class, () -> volvo240.brake(-1.5));
